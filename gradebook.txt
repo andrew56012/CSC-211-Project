@@ -1,0 +1,11 @@
+Student Name: Andrew
+Class: CSC212
+Current Grade: 00
+
+Projects: 0 0
+
+Assignments:  0 0 0 0
+
+Labs: 0 0 0 0 0 0 0 0
+
+Final Exam: 00
