@@ -1,4 +1,3 @@
-
 #include "gradebook.h"
 
 
@@ -22,7 +21,7 @@ void GradeBook::CategoryAverage(int category){
 
 }
 
-void GradeBook::addAssignment(int category,int grade){
+void GradeBook::addAssignment(int category,int grade,std::string aname){
 
 }
 

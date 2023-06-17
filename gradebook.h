@@ -25,7 +25,7 @@ public:
     //given the category to output
     void CategoryAverage(int category);
     //given the category to add an assignment too
-    void addAssignment(int category,int grade);
+    void addAssignment(int category,int grade,std::string aname);
     //given the category to remove from and the assignment number to remove
     void removeAssignment(int category,int Assignnum);
     //given the category and assignment number of grade to be changed
@@ -34,9 +34,5 @@ public:
     void printGradebook();
 
 };
-
-
-
-
 
 #endif //CSC211P_GRADEBOOK_H
