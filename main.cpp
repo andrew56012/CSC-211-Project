@@ -94,6 +94,11 @@ int main() {
             }
             cat--;
 
+            if(Gbook.getCatSize(cat) == 0){
+                std::cout << "No assignments exist in this category.\n";
+                continue;
+            }
+
             Gbook.CategoryAverage(cat);
         }
 
@@ -155,7 +160,10 @@ int main() {
                 }
             }
             cat--;
-
+            if(Gbook.getCatSize(cat) == 0){
+                std::cout << "No assignments exist in this category.\n";
+                continue;
+            }
 
             //make sure name exists and get name
             std::string aname = "";
@@ -185,10 +193,15 @@ int main() {
             while (cat < 0 || cat > 4) {
                 std::cin >> cat;
                 if (cat < 0 || cat > 4) {
-                    std::cout << "Invalid character or value entered! Please try again.";
+                    std::cout << "Invalid character or value entered! Please try again.\n";
                 }
             }
             cat--;
+
+            if(Gbook.getCatSize(cat) == 0){
+                std::cout << "No assignments exist in this category.\n";
+                continue;
+            }
 
             //gets grade for assignment
             int grade = -1;
