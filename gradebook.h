@@ -24,14 +24,16 @@ public:
     void FinalAverage();
     //given the category to output
     void CategoryAverage(int category);
+    //checks if name of assignment is in category
+    bool nameCheck(int category,std::string aname);
     //given the category to add an assignment too
     void addAssignment(int category,int grade,std::string aname);
     //given the category to remove from and the assignment number to remove
-    void removeAssignment(int category,int Assignnum);
+    void removeAssignment(int category,std::string aname);
     //given the category and assignment number of grade to be changed
-    void changeAssignment(int category,int Assignnum, int grade);
+    void changeAssignment(int category,std::string aname, int grade);
     //Outputs the edited gradebook
-    void printGradebook();
+    void printGradebook(std::string name);
 
 };
 

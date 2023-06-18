@@ -83,15 +83,16 @@ int main() {
         else if(selected == 2) {
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam";
+            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
 
             //ensure valid category entered
             while (cat < 0 || cat > 4) {
                 std::cin >> cat;
                 if (cat < 0 || cat > 4) {
-                    std::cout << "Invalid character or value entered! Please try again.";
+                    std::cout << "Invalid character or value entered! Please try again.\n";
                 }
             }
+            cat--;
 
             Gbook.CategoryAverage(cat);
         }
@@ -100,15 +101,16 @@ int main() {
         else if(selected == 3) {
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam";
+            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
 
             //ensure valid category entered
             while (cat < 0 || cat > 4) {
                 std::cin >> cat;
                 if (cat < 0 || cat > 4) {
-                    std::cout << "Invalid character or value entered! Please try again.";
+                    std::cout << "Invalid character or value entered! Please try again.\n";
                 }
             }
+            cat--;
 
             //gets grade for assignment
             int grade = -1;
@@ -118,14 +120,21 @@ int main() {
             while (grade < 0 || grade > 200) {
                 std::cin >> grade;
                 if (grade < 0) {
-                    std::cout << "Invalid character or value entered! Please try again.";
+                    std::cout << "Invalid character or value entered! Please try again.\n";
                 }
             }
 
             //get name
             std::string aname;
-            std::cout << "Please enter the assignment name.\n";
-            std::cin >> aname;
+            std::cout << "Please enter the assignment name.(This name cannot already exist in the category it will be added to!)\n";
+
+            //ensure name does not already exist in category
+            do{
+                    if(Gbook.nameCheck(cat,aname) == true){
+                        std::cout << "Assignment name already exists! Please try again.\n";
+                    }
+                    std::cin >> aname;
+                }while(Gbook.nameCheck(cat,aname) == true);
 
             Gbook.addAssignment(cat, grade, aname);
 
@@ -135,30 +144,34 @@ int main() {
         else if(selected == 4) {
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam";
+            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
             std::cin >> cat;
 
             //ensure valid category entered
             while (cat < 0 || cat > 4) {
                 std::cin >> cat;
                 if (cat < 0 || cat > 4) {
-                    std::cout << "Invalid character or value entered! Please try again.";
+                    std::cout << "Invalid character or value entered! Please try again.\n";
                 }
             }
+            cat--;
 
-            //get index to delete
-            int idx = 0;
-            std::cout << "Please enter the index of the number you would like to delete (0-" << Gbook.getCatSize(cat)-1 << ")\n";
 
-            //make sure idx is within bounds
-            while (idx < 0 || idx > Gbook.getCatSize(cat)-1) {
-                std::cin >> idx;
-                if (idx < 0 || idx > Gbook.getCatSize(cat)-1) {
-                    std::cout << "Invalid character or value entered! Please try again.";
+            //make sure name exists and get name
+            std::string aname = "";
+            std::cout << "Please enter the name of the assignment you would like deleted(Each assignments name is directly too the right of the assignment in the gradebook)\n";
+
+            while(Gbook.nameCheck(cat,aname) == false){
+
+                std::cin >> aname;
+
+                if(Gbook.nameCheck(cat,aname) == false){
+                    std::cout << "Invalid name entered! Please try again.\n";
                 }
+
             }
 
-            Gbook.removeAssignment(cat,idx);
+            Gbook.removeAssignment(cat,aname);
 
         }
 
@@ -166,7 +179,7 @@ int main() {
         else if(selected == 5){
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam";
+            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
 
             //ensure valid category entered
             while (cat < 0 || cat > 4) {
@@ -175,6 +188,7 @@ int main() {
                     std::cout << "Invalid character or value entered! Please try again.";
                 }
             }
+            cat--;
 
             //gets grade for assignment
             int grade = -1;
@@ -188,25 +202,28 @@ int main() {
                 }
             }
 
-            //get index to change
-            int idx = 0;
-            std::cout << "Please enter the index of the number you would like to delete (0-" << Gbook.getCatSize(cat)-1 << ")\n";
+            //make sure name exists and get name
+            std::string aname = "";
+            std::cout << "Please enter the name of the assignment you would like to change(Each assignments name is directly too the right of the assignment in the gradebook)\n";
 
-            //make sure idx is within bounds
-            while (idx < 0 || idx > Gbook.getCatSize(cat)-1) {
-                std::cin >> idx;
-                if (idx < 0 || idx > Gbook.getCatSize(cat)-1) {
-                    std::cout << "Invalid character or value entered! Please try again.";
+            while(Gbook.nameCheck(cat,aname) == false){
+
+                std::cin >> aname;
+
+                if(Gbook.nameCheck(cat,aname) == false){
+                    std::cout << "Invalid name entered! Please try again.\n";
                 }
+
             }
 
-            Gbook.changeAssignment(cat,grade,idx);
+            Gbook.changeAssignment(cat,aname,grade);
         }
         //end loop
         else if(selected == 6){
             fin = true;
             break;
         }
+        //invalid command value entered
         else{
             std::cout << "Invalid character or value enetered! Please try again.\n";
             continue;
@@ -214,8 +231,9 @@ int main() {
 
     }
 
+    //closing the program
     std::cout << "Now updating your file!\n";
-    Gbook.printGradebook();
+    Gbook.printGradebook(name);
     std::cout << "Thank you for using our gradebook editor!\n";
 
 }
