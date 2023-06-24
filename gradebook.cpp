@@ -82,11 +82,38 @@ void GradeBook::changeAssignment(int category,std::string aname, int grade){
 }
 
 void GradeBook::printGradebook(std::string name,std::fstream& txt){
+    int size;
+
     txt << "Student Name: " << name << std::endl;
     txt << "Class: " << "CSC212" << std::endl;
     txt << "Current Grade: " << "00" << std::endl << std::endl; //CHANGE LATER
-    txt << "Projects: P1 0 P2 " << gradebook[0][1].second << std::endl << std::endl;
-    txt << "Assignments: A1 0 A2 0 A3 0 A4 0" << std::endl << std::endl;
-    txt << "Labs: L1 0 L2 0 L3 0 L4 0 L5 0 L6 0 L7 0 L8 0" << std::endl << std::endl;
-    txt << "Final Exam: FE 00";
+
+    for (int i = 0; i < 4; i++) {
+        switch(i) {
+            case 0:
+                txt << "Projects:";
+                break;
+            case 1:
+                txt << "Assignments:";
+                break;
+            case 2:
+                txt << "Labs:";
+                break;
+            case 3:
+                txt << "Final Exam:";
+                break;
+            default:
+                std::cout << "Error: printGradebook switch" << std::endl;
+        }
+
+        size = this->gradebook[i].size();
+
+        for (int j = 0; j < size; j++) {
+            txt << " " << gradebook[i][j].first << " " << gradebook[i][j].second;
+        }
+
+        if (i != 3) {
+            txt << std::endl << std::endl;
+        }
+    }
 }
