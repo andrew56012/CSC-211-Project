@@ -73,7 +73,13 @@ void GradeBook::removeAssignment(int category,std::string aname){
 }
 
 void GradeBook::changeAssignment(int category,std::string aname, int grade){
-
+    int size = this->gradebook[category].size();
+    for (int i = 0; i < size; i++) {
+        if (this->gradebook[category][i].first == aname) {
+            gradebook[category][i].second = grade;
+        }
+    }
+    return;
 }
 
 void GradeBook::printGradebook(std::string name,std::fstream& txt){
