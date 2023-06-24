@@ -58,7 +58,7 @@ void GradeBook::removeAssignment(int category,std::string aname){
 
 }
 
-void GradeBook::changeAssignment(int category,std::string aname, int grade){
+void GradeBook::changeAssignment(int category, std::string aname, int grade){
 
 }
 
