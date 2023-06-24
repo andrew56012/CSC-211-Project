@@ -23,6 +23,20 @@ void GradeBook::CategoryAverage(int category){
 
 }
 
+void GradeBook::printCategory(int category){
+
+    std::cout << "The grades in this category are as follows\n";
+
+    for(int i = 0; i < getCatSize(category);i++){
+
+        std::cout << gradebook[category][i].first << " " << gradebook[category][i].second << " ";
+
+    }
+
+    std::cout << std::endl;
+
+}
+
 bool GradeBook::nameCheck(int category,std::string aname){
     //checks if given name exists in category and returns true or false appropriately
 
@@ -58,10 +72,10 @@ void GradeBook::removeAssignment(int category,std::string aname){
 
 }
 
-void GradeBook::changeAssignment(int category, std::string aname, int grade){
+void GradeBook::changeAssignment(int category,std::string aname, int grade){
 
 }
 
-void GradeBook::printGradebook(std::string name){
+void GradeBook::printGradebook(std::string name,std::fstream& txt){
 
 }

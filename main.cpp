@@ -70,8 +70,8 @@ int main() {
     std::cout << "Welcome to your gradebook editor! What can we help you with today?\nTo select one of the commands below please enter the number next to the command" << std::endl;
 
     while(fin == false) {
-        std::cout << "1. Get Final Average  2. Get Section Average 3. Add an Assignment to a category 4. Remove an Assignment from a category 5. Edit a Graded Assignment" << std::endl;
-        std::cout << "If you would like to exit the editor and update your gradebook file please select 6" << std::endl;
+        std::cout << "1. Get Final Average  2. Get Section Average 3. Add an Assignment to a category 4. Output Category 5. Remove an Assignment from a category 6. Edit a Graded Assignment" << std::endl;
+        std::cout << "If you would like to exit the editor and update your gradebook file please select 7" << std::endl;
         std::cin >> selected;
 
         //get final average
@@ -106,7 +106,7 @@ int main() {
         else if(selected == 3) {
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
+            std::cout << "Which category would you like to add too?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
 
             //ensure valid category entered
             while (cat < 0 || cat > 4) {
@@ -145,11 +145,35 @@ int main() {
 
         }
 
-        //delete an assignment
-        else if(selected == 4) {
+        //Prints category
+        else if(selected == 4){
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
+            std::cout << "Which category would you like to print?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
+            std::cin >> cat;
+
+            //ensure valid category entered
+            while (cat < 0 || cat > 4) {
+                std::cin >> cat;
+                if (cat < 0 || cat > 4) {
+                    std::cout << "Invalid character or value entered! Please try again.\n";
+                }
+            }
+            cat--;
+            if(Gbook.getCatSize(cat) == 0){
+                std::cout << "No assignments exist in this category.\n";
+                continue;
+            }
+
+            Gbook.printCategory(cat);
+
+        }
+
+        //delete an assignment
+        else if(selected == 5) {
+            //gets category
+            int cat = 0;
+            std::cout << "Which category would you like to delete from?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
             std::cin >> cat;
 
             //ensure valid category entered
@@ -184,10 +208,10 @@ int main() {
         }
 
         //changes assignmnet grade
-        else if(selected == 5){
+        else if(selected == 6){
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to print the average of?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
+            std::cout << "Which category is the assignment you would like to change in?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
 
             //ensure valid category entered
             while (cat < 0 || cat > 4) {
@@ -232,7 +256,7 @@ int main() {
             Gbook.changeAssignment(cat,aname,grade);
         }
         //end loop
-        else if(selected == 6){
+        else if(selected == 7){
             fin = true;
             break;
         }
@@ -244,9 +268,13 @@ int main() {
 
     }
 
+    txt.close();
+
+    txt.open("gradebook.txt",std::fstream::out | std::fstream::trunc);
+
     //closing the program
     std::cout << "Now updating your file!\n";
-    Gbook.printGradebook(name);
+    Gbook.printGradebook(name,txt);
     std::cout << "Thank you for using our gradebook editor!\n";
 
 }
