@@ -77,5 +77,11 @@ void GradeBook::changeAssignment(int category,std::string aname, int grade){
 }
 
 void GradeBook::printGradebook(std::string name,std::fstream& txt){
-
+    txt << "Student Name: " << name << std::endl;
+    txt << "Class: " << "CSC212" << std::endl;
+    txt << "Current Grade: " << "00" << std::endl << std::endl; //CHANGE LATER
+    txt << "Projects: P1 0 P2 0" << std::endl << std::endl;
+    txt << "Assignments: A1 0 A2 0 A3 0 A4 0" << std::endl << std::endl;
+    txt << "Labs: L1 0 L2 0 L3 0 L4 0 L5 0 L6 0 L7 0 L8 0" << std::endl << std::endl;
+    txt << "Final Exam: FE 00";
 }

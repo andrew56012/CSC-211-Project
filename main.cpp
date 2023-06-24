@@ -28,7 +28,7 @@ int main() {
 
     //delete unnecessary info from individual vectors left(name of category and initial spaces)
     given[0].erase(given[0].begin(),given[0].begin()+10);
-    given[1].erase(given[1].begin(),given[1].begin()+14);
+    given[1].erase(given[1].begin(),given[1].begin()+13);
     given[2].erase(given[2].begin(),given[2].begin()+6);
     given[3].erase(given[3].begin(),given[3].begin()+12);
 

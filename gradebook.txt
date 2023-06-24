@@ -4,7 +4,7 @@ Current Grade: 00
 
 Projects: P1 0 P2 0
 
-Assignments:  A1 0 A2 0 A3 0 A4 0
+Assignments: A1 0 A2 0 A3 0 A4 0
 
 Labs: L1 0 L2 0 L3 0 L4 0 L5 0 L6 0 L7 0 L8 0
 

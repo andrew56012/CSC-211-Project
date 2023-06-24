@@ -2,3 +2,6 @@
 .idea/vcs.xml
 .idea/modules.xml
 .idea/CSC-211-Project.iml
+/cmake-build-debug/
+.idea/.name
+.idea/misc.xml
