@@ -24,6 +24,8 @@ public:
     void FinalAverage();
     //given the category to output
     void CategoryAverage(int category);
+    //prints category
+    void printCategory(int category);
     //checks if name of assignment is in category
     bool nameCheck(int category,std::string aname);
     //given the category to add an assignment too
@@ -33,7 +35,7 @@ public:
     //given the category and assignment number of grade to be changed
     void changeAssignment(int category,std::string aname, int grade);
     //Outputs the edited gradebook
-    void printGradebook(std::string name);
+    void printGradebook(std::string name,std::fstream& txt);
 
 };
 
