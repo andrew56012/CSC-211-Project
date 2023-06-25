@@ -1,8 +1,19 @@
 #include "gradebook.h"
+#include <vector>
 
 
-GradeBook::GradeBook(std::vector<std::vector<std::pair<std::string,int>>> temp){
-    this->gradebook = temp;
+GradeBook::GradeBook(std::vector<std::vector<std::pair<std::string,int>>> inputs){
+    //Creating the weight for each of the categories
+    //Labs = 20%
+    weights.push_back(std::make_pair("Labs", .20));
+    //Assignments = 20%
+    weights.push_back(std::make_pair("Assignments", .20));
+    //Projects = 50%
+    weights.push_back(std::make_pair("Projects", .50));
+    //Final Exam = 10%
+    weights.push_back(std::make_pair("Final Exam", .10));
+
+    this->gradebook = inputs;
 }
 
 GradeBook::~GradeBook(){
@@ -34,20 +45,6 @@ void GradeBook::printCategory(int category){
     }
 
     std::cout << std::endl;
-
-}
-
-void GradeBook::printAssignment(int category,std::string aname){
-
-    for(int i = 0; i < this -> getCatSize(category); i++){
-
-        if(this-> gradebook[category][i].first == aname){
-            std::cout << gradebook[category][i].first << " " << gradebook[category][i].second << "\n";
-            return;
-        }
-
-    }
-
 
 }
 

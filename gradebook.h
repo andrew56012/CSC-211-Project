@@ -14,7 +14,7 @@ private:
 
 
 public:
-    //constructor given the vector of info from the
+    //constructor given the vector of info from the given file
     GradeBook(std::vector<std::vector<std::pair<std::string,int>>>);
     //deconstructor
     ~GradeBook();
@@ -26,8 +26,6 @@ public:
     void CategoryAverage(int category);
     //prints category
     void printCategory(int category);
-    //prints assignment
-    void printAssignment(int category,std::string aname);
     //checks if name of assignment is in category
     bool nameCheck(int category,std::string aname);
     //given the category to add an assignment too
@@ -38,6 +36,9 @@ public:
     void changeAssignment(int category,std::string aname, int grade);
     //Outputs the edited gradebook
     void printGradebook(std::string name,std::fstream& txt);
+
+    //Weights for the categories for grading the final
+    std::vector<std::pair<std::string,float>> weights;
 
 };
 
