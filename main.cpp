@@ -70,8 +70,8 @@ int main() {
     std::cout << "Welcome to your gradebook editor! What can we help you with today?\nTo select one of the commands below please enter the number next to the command" << std::endl;
 
     while(fin == false) {
-        std::cout << "1. Get Final Average  2. Get Section Average 3. Add an Assignment to a category 4. Output Category 5. Remove an Assignment from a category 6. Edit a Graded Assignment" << std::endl;
-        std::cout << "If you would like to exit the editor and update your gradebook file please select 7" << std::endl;
+        std::cout << "1. Get Final Average  2. Get Section Average 3. Add an Assignment to a category 4. Output Category 5. Output Assignment 6. Remove an Assignment from a category 7. Edit a Graded Assignment" << std::endl;
+        std::cout << "If you would like to exit the editor and update your gradebook file please select 8" << std::endl;
         std::cin >> selected;
 
         //get final average
@@ -79,7 +79,7 @@ int main() {
             Gbook.FinalAverage();
         }
 
-        //gets category average
+            //gets category average
         else if(selected == 2) {
             //gets category
             int cat = 0;
@@ -102,7 +102,7 @@ int main() {
             Gbook.CategoryAverage(cat);
         }
 
-        //Add an assignment
+            //Add an assignment
         else if(selected == 3) {
             //gets category
             int cat = 0;
@@ -135,17 +135,17 @@ int main() {
 
             //ensure name does not already exist in category
             do{
-                    if(Gbook.nameCheck(cat,aname) == true){
-                        std::cout << "Assignment name already exists! Please try again.\n";
-                    }
-                    std::cin >> aname;
-                }while(Gbook.nameCheck(cat,aname) == true);
+                if(Gbook.nameCheck(cat,aname) == true){
+                    std::cout << "Assignment name already exists! Please try again.\n";
+                }
+                std::cin >> aname;
+            }while(Gbook.nameCheck(cat,aname) == true);
 
             Gbook.addAssignment(cat, grade, aname);
 
         }
 
-        //Prints category
+            //Prints category
         else if(selected == 4){
             //gets category
             int cat = 0;
@@ -169,8 +169,46 @@ int main() {
 
         }
 
-        //delete an assignment
-        else if(selected == 5) {
+            //Prints Assignment
+        else if(selected == 5){
+            //gets category
+            int cat = 0;
+            std::cout << "Which category is the assignment you would like to print in?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
+            std::cin >> cat;
+
+            //ensure valid category entered
+            while (cat < 0 || cat > 4) {
+                std::cin >> cat;
+                if (cat < 0 || cat > 4) {
+                    std::cout << "Invalid character or value entered! Please try again.\n";
+                }
+            }
+            cat--;
+            if(Gbook.getCatSize(cat) == 0){
+                std::cout << "No assignments exist in this category.\n";
+                continue;
+            }
+
+            //make sure name exists and get name
+            std::string aname = "";
+            std::cout << "Please enter the name of the assignment you would like to display(Each assignments name is directly too the right of the assignment in the gradebook)\n";
+
+            while(Gbook.nameCheck(cat,aname) == false){
+
+                std::cin >> aname;
+
+                if(Gbook.nameCheck(cat,aname) == false){
+                    std::cout << "Invalid name entered! Please try again.\n";
+                }
+
+            }
+
+            Gbook.printAssignment(cat,aname);
+
+        }
+
+            //delete an assignment
+        else if(selected == 6) {
             //gets category
             int cat = 0;
             std::cout << "Which category would you like to delete from?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
@@ -207,8 +245,8 @@ int main() {
 
         }
 
-        //changes assignmnet grade
-        else if(selected == 6){
+            //changes assignmnet grade
+        else if(selected == 7){
             //gets category
             int cat = 0;
             std::cout << "Which category is the assignment you would like to change in?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
@@ -255,12 +293,12 @@ int main() {
 
             Gbook.changeAssignment(cat,aname,grade);
         }
-        //end loop
-        else if(selected == 7){
+            //end loop
+        else if(selected == 8){
             fin = true;
             break;
         }
-        //invalid command value entered
+            //invalid command value entered
         else{
             std::cout << "Invalid character or value enetered! Please try again.\n";
             continue;
