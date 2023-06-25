@@ -37,6 +37,20 @@ void GradeBook::printCategory(int category){
 
 }
 
+void GradeBook::printAssignment(int category,std::string aname){
+
+    for(int i = 0; i < this -> getCatSize(category); i++){
+
+        if(this-> gradebook[category][i].first == aname){
+            std::cout << gradebook[category][i].first << " " << gradebook[category][i].second << "\n";
+            return;
+        }
+
+    }
+
+
+}
+
 bool GradeBook::nameCheck(int category,std::string aname){
     //checks if given name exists in category and returns true or false appropriately
 
