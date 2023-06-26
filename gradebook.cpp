@@ -153,11 +153,11 @@ void GradeBook::changeAssignment(int category,std::string aname, int grade){
 
 void GradeBook::printGradebook(std::string name,std::fstream& txt){
     int size;
-
+    //Starts by just printing the student name, class and current grade
     txt << "Student Name: " << name << std::endl;
     txt << "Class: " << "CSC212" << std::endl;
     txt << "Current Grade: " << "00" << std::endl << std::endl; //CHANGE LATER
-
+    //Cycles through all prints all categories
     for (int i = 0; i < 4; i++) {
         switch(i) {
             case 0:
@@ -177,7 +177,7 @@ void GradeBook::printGradebook(std::string name,std::fstream& txt){
         }
 
         size = this->gradebook[i].size();
-
+        //Cycles through and prints all grades for category
         for (int j = 0; j < size; j++) {
             txt << " " << gradebook[i][j].first << " " << gradebook[i][j].second;
         }
