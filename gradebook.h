@@ -23,7 +23,7 @@ public:
     //outputs the final average
     double FinalAverage();
     //given the category to output
-    void CategoryAverage(int category);
+    double CategoryAverage(int category);
     //prints category
     void printCategory(int category);
     //print assignment
