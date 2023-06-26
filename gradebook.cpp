@@ -64,40 +64,49 @@ double GradeBook::FinalAverage(){
 
 void GradeBook::CategoryAverage(int cat){
     if(cat == 1) {
-        int size = gradebook[cat].size();
-        Double size;
-        For (int i = 0; i < size, i++){
-            sum+=gradebook[i];
-            }
-        sum/=size
-        return sum;
+        double number;
+        number = 0;
+        std::cout << "Input all of your scores please. " << std::endl;
+        for(int i = 1; i < 2; i++){
+            number = number/500;
+            number = number * 100;
+            cat==number;
+        }
+        std::cout << "\nProjects Average: " << cat << std::endl;
     }
     else if(cat == 2) {
-        int size = gradebook[cat].size();
-        Double size;
-        For (int i = 0; i < size, i++){
-            sum+=gradebook[i];
-            }
-        sum/=size
-        return sum;
+        double number;
+        number = 0;
+        std::cout << "Input all of your scores please. " << std::endl;
+        for(int i = 1; i < 4; i++){
+            number = number/200;
+            number = number * 100;
+            cat==number;
+        }
+
+        std::cout << "\nAssignments Average: " << cat << std::endl;
     }
     else if(cat == 3) {
-        int size = gradebook[cat].size();
-        Double size;
-        For (int i = 0; i < size, i++){
-            sum+=gradebook[i];
-            }
-        sum/=size
-        return sum;
+        double number;
+        number = 0;
+        std::cout << "Input all of your scores please. " << std::endl;
+        for(int i = 1; i < 8; i++){
+            number = number/200;
+            number = number * 100;
+            cat==number;
+        }
+        std::cout << "\nLabs Average: " << cat << std::endl;
     }
     else{
-       int size = gradebook[cat].size();
-        Double size;
-        For (int i = 0; i < size, i++){
-            sum+=gradebook[i];
-            }
-        sum/=size
-        return sum;
+        double number;
+        number = 0;
+        std::cout << "Input all of your scores please. " << std::endl;
+        for(int i = 1; i < 1; i++){
+            number = number/100;
+            number = number * 100;
+            cat==number;
+        }
+        std::cout << "\nFinal Exam: " << cat << std::endl;
     }
 }
 
@@ -112,6 +121,19 @@ void GradeBook::printCategory(int category){
     }
 
     std::cout << std::endl;
+
+}
+
+void GradeBook::printAssignment(int category,std::string aname){
+
+    for(int i = 0; i < this -> getCatSize(category); i++){
+
+        if(this-> gradebook[category][i].first == aname){
+            std::cout << gradebook[category][i].first << " " << gradebook[category][i].second << "\n";
+            return;
+        }
+
+    }
 
 }
 

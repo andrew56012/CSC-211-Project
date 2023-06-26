@@ -26,6 +26,8 @@ public:
     void CategoryAverage(int category);
     //prints category
     void printCategory(int category);
+    //print assignment
+    void printAssignment(int category,std::string aname);
     //checks if name of assignment is in category
     bool nameCheck(int category,std::string aname);
     //given the category to add an assignment too
