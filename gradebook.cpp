@@ -26,15 +26,15 @@ int GradeBook::getCatSize(int category){
 
 }
 
-void GradeBook::FinalAverage(){
-    double FinalAverage;
-    FinalAverage = 0.0;
+double GradeBook::FinalAverage(){
+    double FinalAve;
+    FinalAve = 0.0;
     std::cout << "Input all of your scores " << std::endl;
     for(int i = 1; i < 15; i++){
-        std::cin >> FinalAverage;
-            FinalAverage = FinalAverage/1000;
-            FinalAverage = FinalAverage * 100;
-            return FinalAverage;
+        std::cin >> FinalAve;
+        FinalAve = FinalAve/1000;
+        FinalAve = FinalAve * 100;
+        return FinalAve;
     }
     std::cout << "Your Final Average is" << Gbook.FinalAverage() << std::endl;
 }
