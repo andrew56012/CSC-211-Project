@@ -82,15 +82,15 @@ int main() {
     std::cout << "Welcome to your gradebook editor! What can we help you with today?\nTo select one of the commands below please enter the number next to the command" << std::endl;
 
     while(fin == false) {
-        std::cout << "1. Get Final Average  2. Get Section Average 3. Add an Assignment to a category 4. Output Category 5. Output Assignment 6. Remove an Assignment from a category 7. Edit a Graded Assignment" << std::endl;
+        std::cout << "1. Get Final Average  2. Get Category Average 3. Add an Assignment to a category 4. Output Category 5. Output Assignment 6. Remove an Assignment from a category 7. Edit a Graded Assignment" << std::endl;
         std::cout << "If you would like to exit the editor and update your gradebook file please select 8" << std::endl;
         std::cin >> selected;
 
         //get final average
         if(selected == 1) {
             if(Gbook.getCatSize(0) == 0 || Gbook.getCatSize(1) == 0|| Gbook.getCatSize(2) == 0  || Gbook.getCatSize(3) == 0){
-              std::cout << "One or more of the sections in your gradebook are empty. Please ensure that every section has an assignment grade in order to use this feature.\n";
-              continue;
+                std::cout << "One or more of the sections in your gradebook are empty. Please ensure that every section has an assignment grade in order to use this feature.\n";
+                continue;
             }
             std::cout << "Your final average is " << Gbook.FinalAverage() <<".\n";
         }
@@ -109,31 +109,29 @@ int main() {
                 }
                 std::cin >> cat;
             }
-            cat--;
 
             if(Gbook.getCatSize(cat) == 0){
                 std::cout << "No assignments exist in this category.\n";
                 continue;
             }
 
-            Gbook.CategoryAverage(cat);
+            std::cout << "This categories average is " << Gbook.CategoryAverage(cat) <<".\n";
         }
 
             //Add an assignment
         else if(selected == 3) {
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to add too?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
+            std::cout << "Which category would you like to add too?\n1. Assignments 2. Labs 3. Final Exam\n";
             std::cin >> cat;
 
             //ensure valid category entered
-            while (cat < 0 || cat > 4) {
-                if (cat < 0 || cat > 4) {
+            while (cat < 0 || cat > 3) {
+                if (cat < 0 || cat > 3) {
                     std::cout << "Invalid character or value entered! Please try again.\n";
                 }
                 std::cin >> cat;
             }
-            cat--;
 
             //gets grade for assignment
             int grade = -1;
@@ -142,7 +140,7 @@ int main() {
             //make sure grade is a valid value
             while (grade < 0 || grade > 200) {
                 std::cin >> grade;
-                if (grade < 0) {
+                if (grade < 0 || grade > 200) {
                     std::cout << "Invalid character or value entered! Please try again.\n";
                 }
             }
@@ -187,6 +185,7 @@ int main() {
 
         }
 
+        //prints assignment
         else if(selected == 5){
             //gets category
             int cat = 0;
@@ -228,17 +227,16 @@ int main() {
         else if(selected == 6) {
             //gets category
             int cat = 0;
-            std::cout << "Which category would you like to delete from?\n1. Projects 2. Assignments 3. Labs 4. Final Exam\n";
+            std::cout << "Which category would you like to delete from?\n1. Assignments 2. Labs 3. Final Exam\n";
             std::cin >> cat;
 
             //ensure valid category entered
-            while (cat < 0 || cat > 4) {
+            while (cat < 0 || cat > 3) {
                 std::cin >> cat;
-                if (cat < 0 || cat > 4) {
+                if (cat < 0 || cat > 3) {
                     std::cout << "Invalid character or value entered! Please try again.\n";
                 }
             }
-            cat--;
             if(Gbook.getCatSize(cat) == 0){
                 std::cout << "No assignments exist in this category.\n";
                 continue;
