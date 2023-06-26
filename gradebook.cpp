@@ -27,16 +27,16 @@ int GradeBook::getCatSize(int category){
 }
 
 void GradeBook::FinalAverage(){
-    double grade;
-    grade = 0.0;
+    double FinalAverage;
+    FinalAverage = 0.0;
     std::cout << "Input all of your scores " << std::endl;
     for(int i = 1; i < 15; i++){
-        std::cin >> grade;
-            grade = grade/1000;
-            grade = grade * 100;
+        std::cin >> FinalAverage;
+            FinalAverage = FinalAverage/1000;
+            FinalAverage = FinalAverage * 100;
+            return = FinalAverage;
     }
     std::cout << "Your Final Average is" << Gbook.FinalAverage() << std::endl;
-    std::return = 0;
 }
 
 void GradeBook::CategoryAverage(int cat){
@@ -48,6 +48,7 @@ if(cat == 1) {
             number = number/500;
             number = number * 100;
             cat==number;
+            return cat;
         }
     std::cout << "\nProjects Average: " << Gbook.CategoryAverage(cat) << std::endl;
     }
@@ -58,6 +59,8 @@ else if(cat == 2) {
     for(int i = 1; i < 4; i++){
         number = number/200;
         number = number * 100;
+        cat==number;
+        return cat;
         }
 
     std::cout << "\nAssignments Average: " << Gbook.CategoryAverage(cat); << std::endl;
@@ -69,6 +72,8 @@ else if(cat == 3) {
     for(int i = 1; i < 8; i++){
             number = number/200;
             number = number * 100;
+            cat==number;
+            return cat;
         }    
     std::cout << "\nLabs Average: " << Gbook.CategoryAverage(cat); << std::endl;
     }
@@ -77,8 +82,10 @@ else{
     number = 0;
     std::cout << "Input all of your scores please. " << std::endl;
     for(int i = 1; i < 1; i++){
-           number = number/100;
-           number = number * 100;
+            number = number/100;
+            number = number * 100;
+            cat==number;
+            return cat;
     }
     std::cout << "\nFinal Exam: " << Gbook.CategoryAverage(cat); << std::endl;
     }
