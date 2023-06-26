@@ -141,8 +141,10 @@ void GradeBook::removeAssignment(int category,std::string aname){
 }
 
 void GradeBook::changeAssignment(int category,std::string aname, int grade){
+    //Find how many assignments are in the category then check each assignment
     int size = this->gradebook[category].size();
     for (int i = 0; i < size; i++) {
+        //All assignments that have the name the user input will change to the value the user input
         if (this->gradebook[category][i].first == aname) {
             gradebook[category][i].second = grade;
         }
