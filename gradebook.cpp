@@ -34,7 +34,7 @@ void GradeBook::FinalAverage(){
         std::cin >> FinalAverage;
             FinalAverage = FinalAverage/1000;
             FinalAverage = FinalAverage * 100;
-            return = FinalAverage;
+            return FinalAverage;
     }
     std::cout << "Your Final Average is" << Gbook.FinalAverage() << std::endl;
 }
