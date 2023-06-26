@@ -28,7 +28,7 @@
 
     double GradeBook::FinalAverage(){
         int size;
-        double sum, final = 0;
+        double sum, fin = 0;
         for (int i = 0; i < 4; i++) {
             size = gradebook[i].size();
             sum = 0;
@@ -67,10 +67,10 @@
                     sum /= 10;
                     break;
             }
-            final += sum;
+            fin += sum;
 
         }
-        return final;
+        return fin;
 
     }
 
