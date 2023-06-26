@@ -206,4 +206,3 @@ void GradeBook::printGradebook(std::string name,std::fstream& txt){
         }
     }
 }
-}
