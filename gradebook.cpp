@@ -27,16 +27,39 @@ int GradeBook::getCatSize(int category){
 }
 
 double GradeBook::FinalAverage(){
-    double FinalAve;
-    FinalAve = 0.0;
-    std::cout << "Input all of your scores " << std::endl;
-    for(int i = 1; i < 15; i++){
-        std::cin >> FinalAve;
-        FinalAve = FinalAve/1000;
-        FinalAve = FinalAve * 100;
-        return FinalAve;
+    int size;
+    double sum, final = 0;
+    for (int i = 0; i < 4; i++) {
+        size = inputs[i].size();
+        sum = 0;
+        for (int j = 0; j < size; j++) {
+            sum += inputs[i][j].second;
+        }
+        sum /= size;
+
+        switch (i) {
+            case 0:
+                //Projects are worth half of your grade
+                sum /= 2;
+                break;
+            case 1:
+                //Assignments are worth a fifth of your grade
+                sum /= 5;
+                break;
+            case 2:
+                //Labs are worth a fifth of your grade
+                sum /= 5;
+                break;
+            case 3:
+                //Exams are worth a tenth of your grade
+                sum /= 10;
+                break;
+        }
+        final += sum;
+
     }
-    std::cout << "Your Final Average is" << Gbook.FinalAverage() << std::endl;
+    return fin;
+
 }
 
 void GradeBook::CategoryAverage(int cat){
