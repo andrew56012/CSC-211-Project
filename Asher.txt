@@ -1,0 +1,11 @@
+Student Name: Asher McCoy
+Class: CSC212
+Current Grade: 78.375
+
+Projects: P1 80 P2 75
+
+Assignments: A1 100 A2 60 A3 100 A4 60
+
+Labs: L1 70 L2 85 L3 90 L4 100 L5 70 L6 80 L7 80 L8 90
+
+Final Exam: FE 75

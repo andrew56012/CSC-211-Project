@@ -1,0 +1,11 @@
+Student Name: Andrew Langille
+Class: CSC212
+Current Grade: 82.5
+
+Projects: P1 90 P2 80
+
+Assignments: A1 80 A2 80 A3 100 A4 60
+
+Labs: L1 95 L2 95 L3 100 L4 70 L5 80 L6 90 L7 80 L8 90
+
+Final Exam: FE 75

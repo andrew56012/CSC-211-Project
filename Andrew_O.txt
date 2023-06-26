@@ -1,0 +1,11 @@
+Student Name: Andrew Ou
+Class: CSC212
+Current Grade: 83.375
+
+Projects: P1 80 P2 85
+
+Assignments: A1 90 A2 60 A3 100 A4 100
+
+Labs: L1 75 L2 60 L3 70 L4 90 L5 50 L6 70 L7 90 L8 100
+
+Final Exam: FE 90

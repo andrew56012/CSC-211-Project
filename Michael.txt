@@ -1,0 +1,11 @@
+Student Name: Michael Gilkeson
+Class: CSC212
+Current Grade: 88
+
+Projects: P1 90 P2 100
+
+Assignments: A1 70 A2 90 A3 60 A4 70
+
+Labs: L1 80 L2 75 L3 100 L4 90 L5 100 L6 100 L7 75 L8 60
+
+Final Exam: FE 80
