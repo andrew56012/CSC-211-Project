@@ -66,7 +66,7 @@ elseif(selected == 2) {
     number = number * 100;
 
     std::cout << "\nAssignments Average: " << number << std::endl;
-        }
+    }
 elseif(selected == 3) {
     double number;
     number = 0;
