@@ -41,7 +41,7 @@ void GradeBook::FinalAverage(){
 }
 
 void GradeBook::CategoryAverage(int category){
-if(selected == 1) {
+if(cat == 1) {
     double number;
     number = 0;
     std::string CategoryAverage = " ";
@@ -54,7 +54,7 @@ if(selected == 1) {
    
     std::cout << "\nProjects Average: " << number << std::endl;
     }
-elseif(selected == 2) {
+else if(cat == 2) {
     double number;
     number = 0;
     std::string CategoryAverage = " ";
@@ -67,7 +67,7 @@ elseif(selected == 2) {
 
     std::cout << "\nAssignments Average: " << number << std::endl;
     }
-elseif(selected == 3) {
+else if(cat == 3) {
     double number;
     number = 0;
     std::string CategoryAverage = " ";
