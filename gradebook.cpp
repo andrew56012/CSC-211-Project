@@ -30,10 +30,10 @@ double GradeBook::FinalAverage(){
     int size;
     double sum, final = 0;
     for (int i = 0; i < 4; i++) {
-        size = inputs[i].size();
+        size = Gradebook[i].size();
         sum = 0;
         for (int j = 0; j < size; j++) {
-            sum += inputs[i][j].second;
+            sum += Gradebook[i][j].second;
         }
         sum /= size;
 
@@ -58,7 +58,7 @@ double GradeBook::FinalAverage(){
         final += sum;
 
     }
-    return fin;
+    return final;
 
 }
 
