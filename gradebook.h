@@ -21,7 +21,7 @@ public:
     //gets the size of a categor in the gradebook
     int getCatSize(int category);
     //outputs the final average
-    void FinalAverage();
+    double FinalAverage();
     //given the category to output
     void CategoryAverage(int category);
     //prints category
