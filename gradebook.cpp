@@ -27,6 +27,50 @@ int GradeBook::getCatSize(int category){
 }
 
 void GradeBook::FinalAverage(){
+    double final_number;
+    final_number = 0;
+    std::string FinalAverage = " ";
+    for(int i = 1; i < 15; i++){
+        final_number += GradeBook[i];
+    }
+    final_number = final_number/1000;
+    final_number = final_number * 100;
+
+    if(final_number >= 93.0){
+        FinalAverage = "A";
+    }
+    else if(final_number >= 90.0 || final_number < 94.0){
+        FinalAverage = "A-";
+    }
+    else if(final_number >= 87.0 || final_number < 89.0){
+        FinalAverage = "B+";
+    }
+    else if(final_number >= 83.0 || final_number < 87.0){
+        FinalAverage = "B";
+    }
+    else if(final_number >= 80.0 || final_number < 83.0){
+        FinalAverage = "B-";
+    }
+    else if(final_number >= 77.0 || final_number < 80.0){
+        FinalAverage = "C+";
+    }
+    else if(final_number >= 73.0 || final_number < 77.0){
+        FinalAverage = "C";
+    }
+    else if(final_number >= 70.0 || final_number < 73.0){
+        FinalAverage = "C-";
+    }
+    else if(final_number >= 67.0 || final_number < 70.0){
+        FinalAverage = "D+";
+    }
+    else if(final_number >= 60.0 || final_number < 67.0){
+        FinalAverage = "D";
+    }
+    else {
+        FinalAverage = "F";
+    }
+
+    std::cout << "Final Average: " << FinalAverage << std::endl;
 
 }
 
