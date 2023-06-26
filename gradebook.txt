@@ -1,6 +1,6 @@
 Student Name: Andrew
 Class: CSC212
-Current Grade: 00
+Current Grade: 75
 
 Projects: P1 75 P2 75
 
