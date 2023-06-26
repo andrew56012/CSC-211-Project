@@ -246,7 +246,7 @@ int main() {
             //make sure grade is a valid value
             while (grade < 0 || grade > 200) {
                 std::cin >> grade;
-                if (grade < 0) {
+                if (grade < 0 || grade > 200) {
                     std::cout << "Invalid character or value entered! Please try again.";
                 }
             }
