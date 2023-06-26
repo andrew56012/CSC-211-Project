@@ -26,7 +26,7 @@ int GradeBook::getCatSize(int category){
 
 }
 
-void GradeBook::FinalAverage(){
+int GradeBook::FinalAverage(){
     double final_number;
     final_number = 0;
     std::string FinalAverage = " ";
@@ -37,7 +37,7 @@ void GradeBook::FinalAverage(){
     final_number = final_number/1000;
     final_number = final_number * 100;
 
-    std::cout << "\nFinal Average: " << final_number << std::endl;
+    std::cout << final_number << std::endl;
 }
 
 void GradeBook::CategoryAverage(int category){
