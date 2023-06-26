@@ -64,49 +64,40 @@ double GradeBook::FinalAverage(){
 
 void GradeBook::CategoryAverage(int cat){
     if(cat == 1) {
-        double number;
-        number = 0;
-        std::cout << "Input all of your scores please. " << std::endl;
-        for(int i = 1; i < 2; i++){
-            number = number/500;
-            number = number * 100;
-            cat==number;
-        }
-        std::cout << "\nProjects Average: " << cat << std::endl;
+        int size = gradebook[cat].size();
+        Double size;
+        For (int i = 0; i < size, i++){
+            sum+=gradebook[i];
+            }
+        sum/=size
+        return sum;
     }
     else if(cat == 2) {
-        double number;
-        number = 0;
-        std::cout << "Input all of your scores please. " << std::endl;
-        for(int i = 1; i < 4; i++){
-            number = number/200;
-            number = number * 100;
-            cat==number;
-        }
-
-        std::cout << "\nAssignments Average: " << cat << std::endl;
+        int size = gradebook[cat].size();
+        Double size;
+        For (int i = 0; i < size, i++){
+            sum+=gradebook[i];
+            }
+        sum/=size
+        return sum;
     }
     else if(cat == 3) {
-        double number;
-        number = 0;
-        std::cout << "Input all of your scores please. " << std::endl;
-        for(int i = 1; i < 8; i++){
-            number = number/200;
-            number = number * 100;
-            cat==number;
-        }
-        std::cout << "\nLabs Average: " << cat << std::endl;
+        int size = gradebook[cat].size();
+        Double size;
+        For (int i = 0; i < size, i++){
+            sum+=gradebook[i];
+            }
+        sum/=size
+        return sum;
     }
     else{
-        double number;
-        number = 0;
-        std::cout << "Input all of your scores please. " << std::endl;
-        for(int i = 1; i < 1; i++){
-            number = number/100;
-            number = number * 100;
-            cat==number;
-        }
-        std::cout << "\nFinal Exam: " << cat << std::endl;
+       int size = gradebook[cat].size();
+        Double size;
+        For (int i = 0; i < size, i++){
+            sum+=gradebook[i];
+            }
+        sum/=size
+        return sum;
     }
 }
 
