@@ -6,7 +6,7 @@ will appear.
 
 
 # Planning
-To make sure all group members were on the same page, we held a zoom meeting before starting any code. As a group we made a list of the functions we would need, the purpose they had, their inputs and outputs, and who would work on them. Then we cae up with some psuedocode for how to store the gradebook data, which was going to be the hardest part.
+To make sure all group members were on the same page, we held a zoom meeting before starting any code. As a group we made a list of the functions we would need, the purpose they had, their inputs and outputs, and who would work on them. Then we came up with some psuedocode for how to store the gradebook data, which was going to be the hardest part.
 We decided to store all the data in a 2D vector that holds pairs, so we can have the assignment name and then the grade matched with it, almost like a map. This is separated by categories for easy access later. Then came the command line interface so the user could interact with the program, proceeded by the rest of the functions. Then, we reconviened as a group to split the remaining tasks, like creating the video, writing the report, and finishing the README. Through the whole process communication was kept up through text to make sure everyone was aware of everything happening. Whenever there was any changes to code, we made sure to submit to Github to make sure everyone had the most recent changes. 
 
 # Compilation and Runtime Instructions
