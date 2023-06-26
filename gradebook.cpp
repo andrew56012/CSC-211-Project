@@ -62,10 +62,10 @@ double GradeBook::FinalAverage(){
 
 }
 
-void GradeBook::CategoryAverage(int cat){
+double GradeBook::CategoryAverage(int cat){
     if(cat == 1) {
         int size = gradebook[cat].size();
-        double size;
+        double sum=0;
         for (int i = 0; i < size, i++){
             sum+=gradebook[i];
         }
@@ -74,7 +74,7 @@ void GradeBook::CategoryAverage(int cat){
     }
     else if(cat == 2) {
         int size = gradebook[cat].size();
-        double size;
+        double sum=0;
         for (int i = 0; i < size, i++){
             sum+=gradebook[i];
         }
@@ -83,7 +83,7 @@ void GradeBook::CategoryAverage(int cat){
     }
     else if(cat == 3) {
         int size = gradebook[cat].size();
-        double size;
+        double sum=0;
         for (int i = 0; i < size, i++){
             sum+=gradebook[i];
         }
@@ -92,13 +92,12 @@ void GradeBook::CategoryAverage(int cat){
     }
     else{
         int size = gradebook[cat].size();
-        double size;
+        double sum=0;
         for (int i = 0; i < size, i++){
             sum+=gradebook[i];
-        }
+            }
         sum/=size
         return sum;
-    }
 }
 
 void GradeBook::printCategory(int category){
