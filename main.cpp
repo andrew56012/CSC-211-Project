@@ -260,7 +260,7 @@ int main() {
 
         }
 
-            //changes assignmnet grade
+            //changes assignment grade
         else if(selected == 7){
             //gets category
             int cat = 0;
