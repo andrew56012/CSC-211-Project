@@ -25,6 +25,7 @@ Once the file has been opened, the program will automatically prompt you with di
 
 # Runtime Examples
 The loading of a file into the program, and looking at a specific grade.
+
 <img width="800" alt="working example 1" src="https://github.com/andrew56012/CSC-211-Project/assets/123496094/224dfcf8-ad3e-442f-8c86-2c7d57592240">
 
 Editing the same grade in the file. 
@@ -32,7 +33,13 @@ Editing the same grade in the file.
 <img width="750" alt="Working example 2" src="https://github.com/andrew56012/CSC-211-Project/assets/123496094/fcda22c8-55d9-4e90-b3fc-6d239afafa0e">
 
 Working with the same file as shown above, you can see that the assignment grade and current grade have been updated according to our edits. 
+
 <img width="237" alt="updated thing" src="https://github.com/andrew56012/CSC-211-Project/assets/123496094/ac8e60ef-6080-4499-8f99-f4a9354d749f">
+
+Showing other functions, such as the assigments and grade of a category. 
+
+<img width="749" alt="working example 3" src="https://github.com/andrew56012/CSC-211-Project/assets/123496094/d39818c7-cc4d-4f53-8166-2e6949b42c63">
+
 
 
 
